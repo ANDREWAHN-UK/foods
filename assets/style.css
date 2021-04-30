@@ -19,7 +19,32 @@ html {
 
 /*section-1*/
 .section-1{
-    width:100%;
+    width:100%;  /*height and width make it take over the entire viewport*/
     height: 100vh;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/*adjusts the headline text*/
+.section-heading{
+    font-size:  12rem;
+    font-weight: 900;
+    color: #fff;
+    text-transform: capitalize;
+    text-align: center;
+    letter-spacing: .5rem;
+    text-shadow: .2rem .2rem .2rem #000;
+}
+
+/* styles the icons*/
+.section-1-icons i{
+    font-size: 35rem;
+    color: #a79a2d;
+    position: absolute;
+    transform: translate(-50%, -50%); /* allows adjusting the position of an element*/
+    text-shadow: .2rem .2rem .2rem #000;
 
 }
