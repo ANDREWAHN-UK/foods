@@ -151,3 +151,24 @@ html {
     cursor: pointer;
     box-shadow: -.2rem -.2rem -.2rem #000;
 }
+
+/*section-3*/
+
+.section-3{
+    background-color: #333;
+    padding: 5rem 0;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10rem;
+}
+
+.food-img{
+    width: 30vw;
+    height: 15vw;
+    object-fit: cover;
+}
