@@ -18,8 +18,9 @@ html {
 }
 
 /*section-1*/
-.section-1{
-    width:100%;  /*height and width make it take over the entire viewport*/
+.section-1 {
+    width: 100%;
+    /*height and width make it take over the entire viewport*/
     height: 100vh;
     background-color: #333;
     display: flex;
@@ -29,8 +30,8 @@ html {
 }
 
 /*adjusts the headline text*/
-.section-heading{
-    font-size:  12rem;
+.section-heading {
+    font-size: 12rem;
     font-weight: 900;
     color: #fff;
     text-transform: capitalize;
@@ -42,26 +43,27 @@ html {
 /* styles the icons*/
 /* translate allows adjusting of the icon position */
 /* scale allows displaying of the icons*/
-.section-1-icons i{
+.section-1-icons i {
     font-size: 35rem;
     color: #a79a2d;
     position: absolute;
-    transform: translate(-50%, -50%) scale(0); 
+    transform: translate(-50%, -50%) scale(0);
     text-shadow: .2rem .2rem .2rem #000;
     transition: transform .3s;
 }
 
 /* affects the change class */
-.section-1-icons i.change{
+.section-1-icons i.change {
     transform: translate(-50%, -50%) scale(1);
-    transition: transform .3s;    
+    transition: transform .3s;
 }
 
 /*section-2*/
 
-.section-2{
-    width:100%;  /*height and width make it take over the entire viewport*/
-    height:100vh;
+.section-2 {
+    width: 100%;
+    /*height and width make it take over the entire viewport*/
+    height: 100vh;
     background-color: #222;
     display: flex;
     flex-direction: column;
@@ -70,12 +72,14 @@ html {
     text-align: center;
 }
 
-.cards-container{
+.cards-container {
     display: flex;
     justify-content: space-evenly;
 }
 
-.card{
+
+/*box-shadow creates a shadow effect, makes boxes look nice*/
+.card {
     width: 25%;
     background-color: #a79a2d;
     padding: 4rem;
@@ -83,15 +87,15 @@ html {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    box-shadow:1rem 1rem 1rem #000 ;
-    position: relative; 
+    box-shadow: 1rem 1rem 1rem #000;
+    position: relative;
     transform: rotateY(20deg);
-    transition: transform 0.5s, box-shadow 0.5s ;
+    transition: transform 0.5s, box-shadow 0.5s;
 }
 
 
 /*makes the cards pop up when hovered over*/
-.card:hover{
+.card:hover {
     transform: rotateY(20deg) skewX(-2deg) translateY(-3rem);
 }
 
@@ -110,7 +114,7 @@ html {
 }
 
 /*this is to create the box look for the cards, top side*/
-.card::after{
+.card::after {
     content: "";
     height: 1rem;
     width: 100%;
@@ -123,7 +127,7 @@ html {
     box-shadow: -.1rem -.1rem -.1rem #000;
 }
 
-.card-name{
+.card-name {
     font-size: 3rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -133,11 +137,11 @@ html {
     text-shadow: .15rem .15rem .15rem #000;
 }
 
-.card-img{
+.card-img {
     width: 100%;
 }
 
-.card-btn{
+.card-btn {
     width: 70%;
     background-color: #111;
     color: #fff;
@@ -154,12 +158,12 @@ html {
 
 /*section-3*/
 
-.section-3{
+.section-3 {
     background-color: #333;
     padding: 5rem 0;
 }
 
-.gallery{
+.gallery {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -167,8 +171,99 @@ html {
     margin-top: 10rem;
 }
 
-.food-img{
+
+/*this is the image used in the gallery section*/
+.food-img {
     width: 30vw;
     height: 15vw;
     object-fit: cover;
+    box-shadow: .3rem .3rem .1rem #e92929, .5rem .5rem .1rem #a2e946, .7rem .7rem .1rem #297ce9, .9rem .9rem .1rem #e92999;
+    transition: all .5s;
 }
+
+/*this changes the style effects on hover*/
+.gallery-link:hover .food-img{
+    box-shadow: 1rem 1rem .1rem #e92929, 2rem 2rem .1rem #a2e946, 3rem 3rem .1rem #297ce9, 4rem 4rem .1rem #e92999;
+    filter: blur(.5rem);
+    opacity: .5;
+    transform: scale(1.1);
+}
+
+/*this is the title box of the item*/
+.food-name {
+    position: absolute;
+    top: 2rem;
+    left: 20rem;
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: #fff;
+    width: 0;
+    overflow: hidden;
+}
+
+.gallery-link {
+    position: relative;
+    margin: 4rem 1rem;
+}
+
+/*this is to style the overlay of the images*/
+.gallery-link::before {
+    content: "";
+    position: absolute;
+    width: .2rem;
+    height: 0;
+    background-color: #fff;
+    top: 2vw;
+    left: 80%;
+    transition: height .5s;
+    z-index: 10;
+}
+
+.gallery-link:hover::before{
+    height:80%;
+}
+
+/*this is to style the overlay of the images*/
+.gallery-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: .2rem;
+    background-color: #fff;
+    top: 30%;
+    left: 2rem;
+    transition: width .5s;
+}
+
+.gallery-link:hover::after{
+    width:90%;
+}
+
+.gallery-link:hover .food-name {
+    width: 100%;
+    transition: width 1.5s .5s;
+}
+
+/*this alters the text used to describe the items*/
+.food-description {
+    position: absolute;
+    bottom: 3vw;
+    left: 10rem;
+    width: 60%;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s;
+}
+
+.gallery-link:hover .food-description{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s 1s;
+}
+
