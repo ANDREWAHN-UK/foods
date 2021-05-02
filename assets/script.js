@@ -1,4 +1,5 @@
 /* the code below displays the class 'change' and then removes it from an icon and places it on the next icon */
+/* this code creates a basic slideshow of the designated icons, whihc are in section of the html */
 
 const icons =document.querySelectorAll('.section-1-icons i')
 
