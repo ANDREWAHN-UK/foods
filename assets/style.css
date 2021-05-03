@@ -64,7 +64,7 @@ html {
     height: 6rem;
     background-color: #aaa;
     position: fixed;
-    top: 15rem;
+    top: 1rem;
     left: 5rem;
     border-radius: 30rem 30rem 15rem 15rem;
     box-shadow: .1rem .1rem .1rem #000, -.1rem -.1rem .1rem #000;
